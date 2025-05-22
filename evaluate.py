@@ -6,7 +6,8 @@ from utils.eval import evaluate
 from config import config
 
 def evaluate_best_model():
-    model = ResNet18_CIFAR10().to(config["device"])
+    # model = ResNet18_CIFAR10().to(config["device"])
+    model = ResNet50_CIFAR10().to(config["device"])
     model_path = os.path.join(config["save_dir"], "best_model.pth")
 
     if not os.path.exists(model_path):

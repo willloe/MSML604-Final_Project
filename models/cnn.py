@@ -1,5 +1,6 @@
 import torch.nn as nn
 from torchvision.models import resnet18
+from models.ResNet import ResNet50
 
 def ResNet18_CIFAR10():
     model = resnet18(pretrained=False)
@@ -7,3 +8,6 @@ def ResNet18_CIFAR10():
     model.maxpool = nn.Identity()  # CIFAR-10 is 32x32, skip the initial maxpool
     model.fc = nn.Linear(512, 10)
     return model
+
+def ResNet50_CIFAR10():
+    return ResNet50(10)
